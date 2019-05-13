@@ -35,116 +35,118 @@ particlesJS.load('particles-js', 'assets/particles.json', function() {
 
 **particles.json**
 ```javascript
-{
-  "particles": {
-    "number": {
-      "value": 80,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 10,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 80,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 300,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 2
-    },
-    "move": {
-      "enable": true,
-      "speed": 12,
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": false,
-        "mode": "repulse"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 800,
+particlesJS("particles-js", {
+
+    "particles": {
+        "number": {                   
+            "value": 100,                 // 固定粒子数量
+            "density": {
+                "enable": true,           // 启用粒子密度
+                "value_area": 800         // 固定粒子数量的区域大小
+            }
+        },
+        "color": {
+            "value": "#ffffff"            // 粒子颜色
+        },
+        "shape": {
+            "type": "circle",             // 粒子形状
+            "stroke": {
+                "width": 0,               // 粒子边框宽度
+                "color": "#FF13FE"        // 粒子边框颜色
+            },
+            "polygon": {
+                "nb_sides": 5             // 多边形粒子的边数
+            },
+            "image": {
+                "src": "image/par.svg",  // 自定义粒子(svg/png/gif/jpg)
+                "width": 100,             // 自定义粒子图片宽度
+                "height": 100             // 自定义粒子图片高度
+            }
+        },
+        "opacity": {
+            "value": 0.5,                 // 不透明度 0 ~ 1
+            "random": false,              // 随机不透明度
+            "anim": {
+                "enable": false,          // 开启过渡、渐变
+                "speed": 1,               // 渐变动画速度
+                "opacity_min": 0.1,       // 渐变动画不透明度
+                "sync": false
+            }
+        },
+        "size": {
+            "value": 3,                   // 粒子大小
+            "random": true,               // 粒子大小随机
+            "anim": {
+                "enable": true,           // 开启粒子缩放动画
+                "speed": 20,              // 动画速度
+                "size_min": .5,           // 最小收缩粒子大小 0 ~ 1
+                "sync": false
+            }
+        },
         "line_linked": {
-          "opacity": 1
+            "enable": true,               // 开启连接线
+            "distance": 150,              // 连接线有效距离
+            "color": "#ffffff",           // 连接线颜色
+            "opacity": 0.4,               // 连接线不透明度 0 ~ 1
+            "width": 1                    // 连接线的宽度
+        },
+        "move": {
+            "enable": true,               // 开启粒子移动
+            "speed": 1,                   // 移动速度
+            "direction": "none",          // 移动方向
+            "random": false,              // 移动方向随机
+            "straight": false,            // 直接移动
+            "out_mode": "out",            // 边缘移出 out、反弹 bounce
+            "bounce": false,              // 是否跳动移动
+            "attract": {
+                "enable": false,          // 粒子之间吸引
+                "rotateX": 600,           // X 水平距离
+                "rotateY": 1200           // Y 水平距离
+            }
         }
-      },
-      "bubble": {
-        "distance": 800,
-        "size": 80,
-        "duration": 2,
-        "opacity": 0.8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 400,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-}
+    },
+
+    "interactivity": {
+        "detect_on": "canvas",            // 粒子之间互动检测
+        "events": {
+            "onhover": {
+                "enable": true,           // 开启鼠标悬停
+                "mode": "grab"            // 悬停模式
+            },
+            "onclick": {
+                "enable": true,           // 开启鼠标单击
+                "mode": "push"            // 单击模式
+            },
+            "resize": true                // 互动事件调整
+        },
+        "modes": {
+            "grab": {
+                "distance": 140,          // 粒子互动抓取距离
+                "line_linked": {
+                    "opacity": 1          // 粒子互动抓取距离连线不透明度
+                }
+            },
+            "bubble": {
+                "distance": 400,          // 粒子抓取泡沫效果之间的距离
+                "size": 40,               // 粒子抓取泡沫效果之间的大小
+                "duration": 2,            // 粒子抓取泡沫效果之间的持续时间
+                "opacity": 8,             // 不透明度
+                "speed": 3                // 速度
+            },
+            "repulse": {
+                "distance": 200,          // 击退效果距离
+                "duration": 0.4           // 击退效果持续时间
+            },
+            "push": {
+                "particles_nb": 4         // 粒子推出的数量
+            },
+            "remove": {
+                "particles_nb": 2         // 粒子移除的数量
+            }
+        }
+    },
+    "retina_detect": true                 // 视网膜检测，即无闪烁
+});
 ```
 
 -------------------------------
